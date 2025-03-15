@@ -1,0 +1,23 @@
+{
+    "name": "task-manager-backend",
+    "description": "Task manager backend.",
+    "version": "1.0.0",
+    "engines": {
+        "node": ">=23"
+    },
+    "scripts": {
+        "dev": "node --watch src/index.ts",
+        "build": "tsc -p tsconfig.json",
+        "start": "node dist/index.js",
+        "test": "echo TODO"
+    },
+    "type": "module",
+    "dependencies": {
+        "fastify": "^5.2.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.10",
+        "typescript": "^5.8.2"
+    },
+    "author": "hkuittinen"
+}
