@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue';
 </script>
 
 <template>
     <main>
-        <TheWelcome />
+        <p>404 - Not found.</p>
     </main>
 </template>
