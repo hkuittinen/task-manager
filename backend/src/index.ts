@@ -1,10 +1,9 @@
 import fastify from 'fastify';
+import routes from './routes.ts';
 
 const server = fastify();
 
-server.get('/ping', async (request, reply) => {
-    return 'pong\n';
-});
+server.register(routes)
 
 const listenOptions = {
     host: '0.0.0.0',
