@@ -12,4 +12,10 @@ export default defineConfig({
             '@': fileURLToPath(new URL('./src', import.meta.url)),
         },
     },
+    server: {
+        host: true,
+        allowedHosts: ['frontend'],
+        port: Number(process.env.FRONTEND_PORT || '5173'),
+        strictPort: true,
+    },
 });

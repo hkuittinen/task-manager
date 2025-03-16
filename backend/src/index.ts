@@ -6,7 +6,12 @@ server.get('/ping', async (request, reply) => {
     return 'pong\n';
 });
 
-server.listen({ host: '0.0.0.0', port: 8080 }, (err, address) => {
+const listenOptions = {
+    host: '0.0.0.0',
+    port: Number(process.env.BACKEND_PORT || '8080'),
+};
+
+server.listen(listenOptions, (err, address) => {
     if (err) {
         console.error(err);
         process.exit(1);

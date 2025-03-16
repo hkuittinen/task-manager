@@ -1,0 +1,44 @@
+services:
+    proxy:
+        build: ./proxy
+        env_file:
+            - ./backend/.env
+            - ./frontend/.env
+        networks:
+            - task_manager
+        ports:
+            - '80:80'
+    # DEV ----------------------------------------------------------------------
+    backend-dev:
+        profiles: ["dev"]
+        build:
+            context: ./backend/
+            dockerfile: ./Dockerfile
+            target: dev
+        env_file:
+            - ./backend/.env
+        volumes:
+            - ./backend/src:/backend/src
+        networks:
+            task_manager:
+                aliases:
+                    - backend
+    frontend-dev:
+        profiles: ["dev"]
+        build:
+            context: ./frontend/
+            dockerfile: ./Dockerfile
+            target: dev
+        env_file:
+            - ./frontend/.env
+        volumes:
+            - ./frontend/src:/frontend/src
+        networks:
+            task_manager:
+                aliases:
+                    - frontend
+    # PROD ---------------------------------------------------------------------
+    # Not implemented.
+networks:
+    task_manager:
+        driver: bridge
