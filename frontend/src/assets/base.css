@@ -13,17 +13,23 @@
 }
 
 :root {
-    --color-text: #fff;
-    --color-background: #000;
+    --color-primary: #52778b;
+    --color-body-background: #0d1117;
+    --color-app-background: #010409;
+    --color-text: #f0f6fc;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     color: var(--color-text);
-    background: var(--color-background);
+    background: var(--color-body-background);
     font-family: Montserrat, sans-serif;
 }
 
 #app {
+    min-height: 100vh;
     max-width: 800px;
     margin: 0 auto;
+    background: var(--color-app-background);
 }
