@@ -5,7 +5,13 @@ import AppHeader from './components/AppHeader.vue';
 
 <template>
     <AppHeader text="Task Manager" />
-    <RouterView />
+    <main>
+        <RouterView />
+    </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+    padding: 16px;
+}
+</style>

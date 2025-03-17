@@ -2,7 +2,5 @@
 </script>
 
 <template>
-    <main>
-        TODO: Tasks.
-    </main>
+    TODO: Tasks.
 </template>

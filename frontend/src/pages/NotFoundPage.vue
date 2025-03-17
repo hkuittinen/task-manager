@@ -2,7 +2,5 @@
 </script>
 
 <template>
-    <main>
-        <p>404 - Not found.</p>
-    </main>
+    <p>404 - Not found.</p>
 </template>
