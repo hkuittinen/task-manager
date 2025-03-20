@@ -5,20 +5,20 @@ defineProps<{
 </script>
 
 <template>
-    <header>
-        <h1> {{ text }}</h1>
+    <header class="app-header">
+        <h1>{{ text }}</h1>
     </header>
 </template>
 
 <style scoped>
-header {
+.app-header {
     padding: 16px;
     border-bottom: 4px solid var(--color-primary);
 }
 
-h1 {
-    font-size: 2rem;
+.app-header h1 {
+    font-size: 1.8rem;
     margin: 0;
-    color: #fff;
+    color: var(--color-text);
 }
 </style>

@@ -13,7 +13,7 @@
 }
 
 :root {
-    --color-primary: #52778b;
+    --color-primary: #004d00;
     --color-body-background: #0d1117;
     --color-app-background: #010409;
     --color-text: #f0f6fc;
@@ -32,4 +32,19 @@ body {
     max-width: 800px;
     margin: 0 auto;
     background: var(--color-app-background);
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+button:hover {
+    filter: brightness(150%);
 }
