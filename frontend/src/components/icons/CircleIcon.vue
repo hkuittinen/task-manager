@@ -1,0 +1,21 @@
+<script setup lang="ts"></script>
+
+<template>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        class="icon"
+    >
+        <circle
+            cx="50"
+            cy="50"
+            r="50"
+        />
+    </svg>
+</template>
+
+<style>
+.icon {
+    fill: var(--color-primary);
+}
+</style>
