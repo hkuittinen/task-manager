@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NoTasks from '@/components/NoTasks.vue';
 import TasksList from '@/components/TaskList.vue';
-import { useTasksStore } from '@/stores/tasks';
+import { useTasksStore } from '@/stores/tasksStore';
 
 const tasksStore = useTasksStore();
 </script>
