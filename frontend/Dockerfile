@@ -8,5 +8,8 @@ FROM base AS dev-build
 COPY . .
 RUN npm install
 
+FROM dev-build AS test-unit
+CMD ["npm", "run", "test:unit"]
+
 FROM dev-build AS dev
 CMD ["npm", "run", "dev"]

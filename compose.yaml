@@ -1,5 +1,7 @@
 services:
+    # DEV ----------------------------------------------------------------------
     proxy:
+        profiles: ["dev"]
         build: ./proxy
         env_file:
             - ./backend/.env
@@ -8,7 +10,6 @@ services:
             - task_manager
         ports:
             - '80:80'
-    # DEV ----------------------------------------------------------------------
     backend-dev:
         profiles: ["dev"]
         build:
@@ -37,8 +38,21 @@ services:
             task_manager:
                 aliases:
                     - frontend
-    # PROD ---------------------------------------------------------------------
-    # Not implemented.
+    # TEST ---------------------------------------------------------------------
+    frontend-test:
+        profiles: ["test"]
+        build:
+            context: ./frontend/
+            dockerfile: ./Dockerfile
+            target: test-unit
+        env_file:
+            - ./frontend/.env
+        volumes:
+            - ./frontend/src:/frontend/src
+        networks:
+            task_manager:
+                aliases:
+                    - frontend
 networks:
     task_manager:
         driver: bridge
