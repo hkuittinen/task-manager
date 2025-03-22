@@ -1,9 +1,13 @@
 import fastify from 'fastify';
+import cors from '@fastify/cors';
 import routes from './routes.ts';
 
 const server = fastify();
 
-server.register(routes)
+await server.register(cors, {
+    origin: '*',
+});
+await server.register(routes);
 
 const listenOptions = {
     host: '0.0.0.0',
