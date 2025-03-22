@@ -1,6 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import type { Task, TaskList } from '@/types';
+import api from '@/api';
 
 export const useTasksStore = defineStore('tasks', () => {
     const loading = ref(false);
@@ -12,13 +13,7 @@ export const useTasksStore = defineStore('tasks', () => {
         loading.value = true;
         errorMessage.value = '';
         try {
-            const result = await fetch('/api/tasks');
-
-            if (!result.ok) {
-                throw new Error('Result is not ok.');
-            }
-
-            taskList.value = (await result.json()) as TaskList;
+            taskList.value = await api.getTasks();
         } catch (error) {
             console.error(error);
             errorMessage.value = 'Something went wrong.';
