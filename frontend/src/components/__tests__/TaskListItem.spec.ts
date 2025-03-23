@@ -33,4 +33,4 @@ describe('TaskListItem', () => {
         expect(buttonComponent.text()).toBe('Complete task');
         expect(clicked).toBe(true);
     });
-})
+});
